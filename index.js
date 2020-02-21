@@ -1,7 +1,8 @@
-let express = require('express');
-let bodyParser = require('body-parser');
-let app = express();
-let socket = require('socket.io');
+let express = require('express'),
+    bodyParser = require('body-parser'),
+    app = express(),
+    upload = require("express-fileupload"),
+    socket = require('socket.io');
 
 //server listening method
 var server = app.listen(3000,()=>{
@@ -36,4 +37,5 @@ io.on('connection',(socket)=>{
         socket.broadcast.emit('typing', data);
     });
 });
-//
+
+//File upload module

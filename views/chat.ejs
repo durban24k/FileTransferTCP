@@ -20,11 +20,12 @@
             </div>
             <div class="text-container">
                 <div class="text-view">
-                    <div id="output"></div>
                     <div id="feedback"></div>
+                    <div id="output"></div>
                 </div>
+                
                 <div class="draftbox">
-                    <input type="file" id="file-input" hidden="hidden">
+                    <input type="file" id="file-input" name="file-upload" hidden="hidden" multiple accept=".docx, .doc, .mp3, .mp4, .pdf, .jpg, .png, .jpeg, .xlsx">
                     <button id="attachment" type="button"><i class="fas fa-paperclip fa-lg" style="color:rgb(104,104,104);"></i></button>
                     <input id="message" class="draft-field" autocomplete="off" autofocus="on" type="text" placeholder="Type a message...">
                     <button id="send"><i class="fas fa-paper-plane fa-lg" style="color:rgb(104,104,104);"></i></button>

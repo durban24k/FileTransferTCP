@@ -7,7 +7,8 @@ let message = document.getElementById('message'),
     btn = document.getElementById('send'),
     attachBtn = document.getElementById('attachment'),
     fileInput = document.getElementById('file-input'),
-    feedback = document.getElementById('feedback');
+    feedback = document.getElementById('feedback'),
+    fileupload = document.getElementById('file-input');
     
 
 //Uploading a file
@@ -31,22 +32,30 @@ message.addEventListener("keyup",(e)=>{
         btn.click();
     }
 });
+//Event listener for the file input button
+//fileInput.addEventListener
 //--Using the button click to send the message
 btn.addEventListener("click",()=>{
+    //Timestamping on the text message
+    let now = new Date();
+    let time = now.toLocaleTimeString();
     if(message.value == ""){
-        alert('Cannot Send an Empty Message!');
+        alert('Attach a Message or an Attachment!!!');
     }else{
         socket.emit('chat',{
             message:message.value,
-            username:username
+            username:username,
+            
         });
         message.value = "";
     }
 });
+
+
 //Emit Event
 socket.on('chat',(data)=>{
     feedback.innerHTML = "";
-    output.innerHTML+= '<p><strong>'+ data.username+': </strong>'+data.message+ '</p>';
+    output.innerHTML+= '<p><strong>'+ data.username+': </strong>'+data.message+'<span>'+data.time+'</span></p>';
 });
 
 //Event Listeners
