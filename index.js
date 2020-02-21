@@ -3,10 +3,11 @@ let express = require('express'),
     app = express(),
     upload = require("express-fileupload"),
     socket = require('socket.io');
+const port = process.env.PORT || 3000;
 
 //server listening method
-var server = app.listen(3000,()=>{
-    console.log('Listening on port 3000');
+var server = app.listen(port,()=>{
+    console.log(`Server Listening on port ${port}`);
 });
 let io = socket(server);
 
