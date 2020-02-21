@@ -8,7 +8,7 @@
         <script src="https://kit.fontawesome.com/3637a395ce.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
         <link href="/css/style.css" rel="stylesheet" type="text/css">
-        <title>QU | LiveChat</title>
+        <title>QUE | LiveChat</title>
     </head>
     <body>
         <div class="container">
@@ -25,8 +25,10 @@
                 </div>
                 
                 <div class="draftbox">
-                    <input type="file" id="file-input" name="file-upload" hidden="hidden" multiple accept=".docx, .doc, .mp3, .mp4, .pdf, .jpg, .png, .jpeg, .xlsx">
-                    <button id="attachment" type="button"><i class="fas fa-paperclip fa-lg" style="color:rgb(104,104,104);"></i></button>
+                    <form ref="uploadfile" action="http://localhost:3000/upload" method="POST" enctype="multipart/form-data">
+                        <input type="file" id="file-input" name="file-upload" hidden="hidden" multiple accept=".docx, .doc, .mp3, .mp4, .pdf, .jpg, .png, .jpeg, .xlsx">
+                        <button id="attachment" type="button"><i class="fas fa-paperclip fa-lg" style="color:rgb(104,104,104);"></i></button>
+                    </form>
                     <input id="message" class="draft-field" autocomplete="off" autofocus="on" type="text" placeholder="Type a message...">
                     <button id="send"><i class="fas fa-paper-plane fa-lg" style="color:rgb(104,104,104);"></i></button>
                 </div>
