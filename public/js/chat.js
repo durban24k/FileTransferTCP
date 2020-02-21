@@ -45,6 +45,7 @@ btn.addEventListener("click",()=>{
         socket.emit('chat',{
             message:message.value,
             username:username,
+            time:time
             
         });
         message.value = "";
