@@ -35,7 +35,7 @@ message.addEventListener("keyup",(e)=>{
 //input file button event listener
 fileInput.addEventListener("change",()=>{
     let filename = fileInput.value;
-    message.value.innerHTML += filename.replace(/^.*[\\\/]/, '');
+    message.value.innerHTML = filename.replace(/^.*[\\\/]/, '');
 });
 //Event listener for the file input button
 //fileInput.addEventListener
